@@ -1,0 +1,124 @@
+.main-body {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.main-body label{
+  font-weight: bold;
+}
+.main-body h1{
+  text-align: center;
+}
+.text-error{
+  font-weight: 600;
+  color: rgb(218, 9, 9);
+}
+.gender {
+ 
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+}
+.gender input[type="radio"] {
+  margin-left: 5px;
+  margin: 5px;
+  
+}
+.email{
+padding-bottom: 5px;
+}
+
+.determineTime input{
+   
+    display: block;
+    font-weight: bold;
+    max-width: 100px;
+    
+}
+.month{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.month input{
+  max-width: 150px;
+  max-width: 110px;
+
+}
+.week{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.week input{
+  max-width: 110px;
+}
+.form-check{
+ margin: 5px;
+ padding: 5px;
+}
+.expNum{
+  padding: 10px;
+}
+.form-check label{
+  padding: 4px;
+}
+.file{
+  margin: 10px;
+}
+#start{
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+  margin: 0.4rem 0;
+}
+.linked{
+  font-weight: bold;
+}
+.linked label{
+  padding-bottom: 6px;
+}
+.colour{
+  padding: 10px;
+}
+.colour label{
+  padding: 10px;
+}
+.mob{
+  padding: 10px;
+}
+.mob label{
+  font-weight: bold;
+  
+}
+.search{
+  display: block;
+  padding: 10px;
+}
+.search input{
+  display:flex;
+  max-width: 400px;
+}
+.search button{
+   float:calc() ;
+}
+.butt {
+  display: flex;
+  float: right;
+  padding-bottom: 50px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.sum{
+  padding: 10px;
+  
+}
+.res{
+  padding: 10px;
+}
+.but{
+  padding: 10px;
+}
