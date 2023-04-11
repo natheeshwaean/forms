@@ -1,8 +1,7 @@
 import './App.css';
 import { useState } from 'react';
-import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
-import { Form, Label } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import { useForm, Controller } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -13,12 +12,8 @@ function App() {
   const [selectedDate, setSelectedDate] = useState(null);
   const maxDate = new Date("04/10/2023");
   const range2 = watch('range');
-  const [selectedTime, setSelectedTime] = useState('10:00');
-  
-  const handleTimeChange = (time) => {
-    setSelectedTime(time);
-  };
-  
+ 
+
   const files = (file) => {
     const valid = 1000000;
     return file[0].size <= valid || "please upload your file";
@@ -63,11 +58,26 @@ function App() {
         {errors.lastName && <p className='text-error'>This field is required</p>}
         {errors.lastName?.type === "pattern" && <span className='text-error'>Please enter only alphabet letters</span>}
         
-        <Form.Field>
+        <div className='email'>
+  <Form.Field>
+    <label htmlFor='email'>Email</label>
+    <input
+      placeholder='Email'
+      id='email'
+      type="email"
+      {...register("email", {
+        required: true,
+        pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      })}
+    />
+
+
+        {/* <Form.Field>
           <label>Date of Birth:</label>
-          <DatePicker {...register('DOB', { required: true, DOB: true })} selected={selectedDate} maxDate={maxDate} onChange={date => setSelectedDate(date)} />
+          <DatePicker name='dateOfBirth'   {...register('DOB', { required: true, DOB: true })} selected={selectedDate} maxDate={maxDate} onChange={date => setSelectedDate(date)} />
         </Form.Field>
-        {errors.DOB && <p className='text-error'>Please check the Date of Birth</p>}
+        {/* {errors.DOB && <p className='text-error'>Please check the Date of Birth</p>} */}
+        {/* {errors.dateOfBirth?.type === "required" && <span className='text-error'>Please check the Date of Birth</span>} */}
         
         <Form.Field>
           <label>Age limit</label>
@@ -95,18 +105,7 @@ function App() {
         />
   {errors.mySelect && <p className='text-error'>Please select your state</p>}
  </div>
- <div className='email'>
-  <Form.Field>
-    <label htmlFor='email'>Email</label>
-    <input
-      placeholder='Email'
-      id='email'
-      type="email"
-      {...register("email", {
-        required: true,
-        pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      })}
-    />
+
   </Form.Field>
   {errors.email && <p className='text-error'>Please check the Email</p>}
 </div>
@@ -201,9 +200,7 @@ function App() {
        <label htmlFor='avatar'>Upload your resume</label>
        <input type='file' id="avatar" name="avatar"
         accept="image/png, image/jpeg" size={1000000} {...register('file',{required :true,validate:files})}/>
-  {errors.file && <p className='text-error'>Please upload file between 1MP</p>}
-  {errors.file?.type === 'required' && <p className='text-error'>Please upload your file </p>} 
-        </div>
+  {errors.file && <p className='text-error'>Please upload file between 1MP</p>} </div>
 
      <div className='colour'>
        <input type="color" id="head" name="head"/>

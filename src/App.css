@@ -50,7 +50,7 @@ padding-bottom: 5px;
   flex-direction: column;
 }
 .week input{
-  max-width: 110px;
+  max-width: 120px;
 }
 .form-check{
  margin: 5px;
