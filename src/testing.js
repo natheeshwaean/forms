@@ -70,6 +70,7 @@ function App() {
         pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       })}
     />
+     {errors.email && <p className='text-error'>Please check the Email</p>}
 
 
         {/* <Form.Field>
@@ -107,7 +108,7 @@ function App() {
  </div>
 
   </Form.Field>
-  {errors.email && <p className='text-error'>Please check the Email</p>}
+ 
 </div>
 <div className='determineTime'>
   <label htmlFor="appt">Time:</label>
